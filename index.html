@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clutch Community | Build your biker legacy</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        background: '#121212',
+                        surface: '#1E1E1E',
+                        primary: '#FF5200', // Fiery biker orange
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #121212; color: white; overflow-x: hidden; }
+
+        /* Ambient Glow behind the logo/hero */
+        .ambient-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,82,0,0.15) 0%, rgba(18,18,18,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(50px);
+        }
+
+        /* Float animation for the logo */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="w-full py-6 px-6 md:px-12 flex justify-between items-center z-20 relative border-b border-white/5 bg-background/80 backdrop-blur-md sticky top-0">
+        <div class="flex items-center gap-3">
+            <img src="logo5.jpg" alt="Clutch Community Logo" class="w-10 h-10 object-contain rounded-lg shadow-[0_0_15px_rgba(255,82,0,0.4)]">
+            <h1 class="text-xl md:text-2xl font-black tracking-tight uppercase">
+                Clutch<span class="text-primary">Community</span>
+            </h1>
+        </div>
+        <a href="#support" class="text-sm font-bold text-gray-400 hover:text-primary transition-colors">Support</a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col">
+        
+        <!-- Hero Section -->
+        <section class="relative w-full px-6 md:px-12 py-20 lg:py-32 max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-12 z-10">
+            
+            <!-- Left Text Content -->
+            <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-surface border border-white/10 mb-6 shadow-sm">
+                    <span class="text-primary font-bold text-xs tracking-wider uppercase">The Ultimate Biker Network</span>
+                </div>
+
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tighter mb-6">
+                    Build your <br>
+                    <span class="text-primary">biker legacy.</span>
+                </h2>
+                
+                <p class="text-gray-400 text-lg md:text-xl max-w-lg mb-10 leading-relaxed font-light">
+                    Track every ride, discover epic routes, and connect with a global brotherhood of riders. The road is calling.
+                </p>
+
+                <!-- Call To Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <!-- Google Play Button (Active) -->
+                    <a href="https://play.google.com/store/apps/details?id=com.clutchcommunity.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="group relative flex items-center justify-center gap-3 bg-primary text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-500 transition duration-300 shadow-[0_0_20px_rgba(255,82,0,0.3)] hover:shadow-[0_0_30px_rgba(255,82,0,0.5)] overflow-hidden">
+                        <i class="fa-brands fa-google-play text-xl group-hover:scale-110 transition-transform"></i>
+                        <div class="flex flex-col items-start leading-none">
+                            <span class="text-[10px] uppercase tracking-wider text-black/80 font-bold mb-1">Get it on</span>
+                            <span class="text-base tracking-tight">Google Play</span>
+                        </div>
+                    </a>
+
+                    <!-- App Store Button (Disabled / Coming Soon) -->
+                    <div class="relative flex items-center justify-center gap-3 bg-surface border border-white/5 text-gray-500 px-8 py-4 rounded-xl font-bold text-lg cursor-not-allowed">
+                        <i class="fa-brands fa-apple text-2xl opacity-50"></i>
+                        <div class="flex flex-col items-start leading-none opacity-50">
+                            <span class="text-[10px] uppercase tracking-wider mb-1">Coming soon to</span>
+                            <span class="text-base tracking-tight">App Store</span>
+                        </div>
+                        <!-- Absolute 'Coming Soon' Badge -->
+                        <div class="absolute -top-3 -right-2 bg-white text-black text-[9px] font-black uppercase px-2 py-1 rounded-md tracking-wider transform rotate-12 shadow-lg">
+                            In Review
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Visual Content -->
+            <div class="w-full lg:w-1/2 flex justify-center items-center relative">
+                <div class="ambient-glow"></div>
+                <!-- Prominent Logo Display -->
+                <img src="logo5.jpg" alt="Clutch Community Insignia" class="relative z-10 w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl shadow-[0_0_50px_rgba(255,82,0,0.2)] border-2 border-white/5 animate-float">
+            </div>
+        </section>
+
+        <!-- Features Grid Section -->
+        <section class="w-full px-6 md:px-12 py-20 bg-[#0a0a0a] border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Everything for the ride.</h2>
+                    <p class="text-gray-400 text-lg">Powerful tools built by riders, for riders.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                    
+                    <!-- Feature 1 -->
+                    <div class="bg-surface p-6 rounded-2xl border border-white/5 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+                            <i class="fa-solid fa-location-crosshairs text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Ride Tracking</h3>
+                        <p class="text-gray-400 text-sm">Record your routes, lean angles, speed, and distance with precision.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-surface p-6 rounded-2xl border border-white/5 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+                            <i class="fa-solid fa-map-location-dot text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Route Planner</h3>
+                        <p class="text-gray-400 text-sm">Map out your next adventure and discover the most scenic twisties.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="bg-surface p-6 rounded-2xl border border-white/5 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+                            <i class="fa-solid fa-motorcycle text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Live Group Rides</h3>
+                        <p class="text-gray-400 text-sm">Share real-time locations on the map so nobody in the pack gets left behind.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="bg-surface p-6 rounded-2xl border border-white/5 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+                            <i class="fa-solid fa-users text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Social Feeds & Clubs</h3>
+                        <p class="text-gray-400 text-sm">Join exclusive local riding clubs and share your best moments on the feed.</p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="bg-surface p-6 rounded-2xl border border-white/5 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+                            <i class="fa-solid fa-warehouse text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Digital Garage</h3>
+                        <p class="text-gray-400 text-sm">Showcase your machines, mods, and keep track of maintenance logs.</p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="bg-surface p-6 rounded-2xl border border-white/5 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+                            <i class="fa-solid fa-robot text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">AI Riding Tools</h3>
+                        <p class="text-gray-400 text-sm">Get intelligent insights, smart weather updates, and route recommendations.</p>
+                    </div>
+
+                    <!-- Feature 7 -->
+                    <div class="bg-surface p-6 rounded-2xl border border-white/5 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group xl:col-span-2">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+                            <i class="fa-solid fa-mug-hot text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Rider Lounge</h3>
+                        <p class="text-gray-400 text-sm">Ask mechanical questions, discuss gear, and chat with the global community in our dedicated forums.</p>
+                    </div>
+
+                    <!-- Feature 8 -->
+                    <div class="bg-surface p-6 rounded-2xl border border-white/5 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+                            <i class="fa-solid fa-trophy text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Challenges</h3>
+                        <p class="text-gray-400 text-sm">Push your limits, complete milestones, and earn exclusive digital badges.</p>
+                    </div>
+
+                    <!-- Feature 9 -->
+                    <div class="bg-surface p-6 rounded-2xl border border-white/5 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+                            <i class="fa-solid fa-calendar-check text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Find Rides</h3>
+                        <p class="text-gray-400 text-sm">Discover upcoming events, meets, and scheduled rides in your area.</p>
+                    </div>
+
+                    <!-- Feature 10 -->
+                    <div class="bg-surface p-6 rounded-2xl border border-white/5 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+                            <i class="fa-solid fa-user-plus text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Find Riders</h3>
+                        <p class="text-gray-400 text-sm">Connect with fellow motorcyclists who share your exact riding style.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Crucial for App Store Review) -->
+    <footer id="support" class="w-full bg-[#050505] border-t border-white/10 py-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            
+            <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-3 justify-center md:justify-start mb-2">
+                    <img src="logo5.jpg" alt="Logo" class="w-8 h-8 rounded-md object-contain">
+                    <span class="text-xl font-black uppercase tracking-tight">Clutch<span class="text-primary">Community</span></span>
+                </div>
+                <p class="text-sm text-gray-500 font-medium">© 2026 Clutch Community. All rights reserved.</p>
+            </div>
+
+            <!-- Prominent Support Information Container -->
+            <div class="flex flex-col items-center md:items-end gap-2 bg-white/5 p-6 rounded-2xl border border-white/10 w-full md:w-auto">
+                <span class="text-xs text-gray-400 uppercase tracking-widest font-black mb-1"><i class="fa-solid fa-life-ring mr-2"></i> App Support & Inquiries</span>
+                <p class="text-sm text-gray-400 mb-2">Need help with your account or have a question?</p>
+                <!-- Explicit Support Email Link -->
+                <a href="mailto:support@clutchcommunity.com" class="text-lg md:text-xl font-black text-white hover:text-primary transition flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-primary"></i> support@clutchcommunity.com
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
